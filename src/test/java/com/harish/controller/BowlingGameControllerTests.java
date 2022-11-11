@@ -18,9 +18,9 @@ public class BowlingGameControllerTests {
     private MockMvc mvc;
 
     @Test
-    public void gameHandlerApiNotFoundTest() throws Exception {
+    public void gameHandlerApiFoundTest() throws Exception {
 
         mvc.perform(get("/getScore?game=0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0"))
-                .andExpect(status().isNotFound());
+                .andExpect(status().isOk());
     }
 }
