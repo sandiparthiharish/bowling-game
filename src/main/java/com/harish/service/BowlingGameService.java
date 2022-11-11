@@ -6,6 +6,10 @@ import org.springframework.stereotype.Service;
 public class BowlingGameService {
 
     public int getGameScore(int[] rolls) {
-        return 0;
+        int score = 0;
+        for(int roll : rolls) {
+            score += roll;
+        }
+        return score;
     }
 }
