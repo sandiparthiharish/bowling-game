@@ -5,19 +5,25 @@ import org.springframework.stereotype.Service;
 @Service
 public class BowlingGameService {
 
-    public int getGameScore(int[] rolls) {
+    private int[] rolls;
+
+    public int getGameScore(int[] eachGame) {
+        rolls = eachGame;
         int score = 0;
         int roll = 0;
-        for(int cursor = -1; cursor < 19; cursor++) {
-            if(rolls[roll] + rolls[roll+1] == 10) {
+        for(int frame = 0; frame < 10; frame++) {
+            if(isSpare(roll)) {
                 score = 10 + rolls[roll+2];
-                roll+=2;
-                cursor++;
+                roll += 2;
             } else {
-                score += rolls[roll];
+                score += rolls[roll] + rolls[roll+1];
+                roll += 2;
             }
         }
         return score;
     }
 
+    private boolean isSpare(int roll) {
+        return rolls[roll] + rolls[roll +1] == 10;
+    }
 }
