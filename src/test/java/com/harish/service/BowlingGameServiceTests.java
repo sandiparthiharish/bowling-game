@@ -45,4 +45,10 @@ public class BowlingGameServiceTests {
         assertThat(bowlingGameService.getGameScore(new int[] {1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 5,5,3}))
                 .isEqualTo(31);
     }
+
+    @Test
+    public void getGameScore_WithAllFramesScoringSparesTest() {
+        assertThat(bowlingGameService.getGameScore(new int[] {5,5, 5,5, 5,5, 5,5, 5,5, 5,5, 5,5, 5,5, 5,5, 5,5,3}))
+                .isEqualTo(148);
+    }
 }
