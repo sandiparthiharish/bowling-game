@@ -26,7 +26,8 @@ public class BowlingGameControllerTests {
     @Test
     public void gameHandlerApiFoundTest() throws Exception {
 
-        when(bowlingGameService.getGameScore()).thenReturn(0);
+        when(bowlingGameService.getGameScore(new int[] {0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0}))
+                .thenReturn(0);
         mvc.perform(get("/getScore?game=0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0"))
                 .andExpect(status().isOk());
     }

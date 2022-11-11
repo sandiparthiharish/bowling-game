@@ -16,6 +16,6 @@ public class BowlingGameController {
 
     @GetMapping(path = "/getScore")
     public int gameHandler(@RequestParam int[] game) {
-        return bowlingGameService.getGameScore();
+        return bowlingGameService.getGameScore(game);
     }
 }

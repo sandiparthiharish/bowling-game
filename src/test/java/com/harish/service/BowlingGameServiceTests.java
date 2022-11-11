@@ -11,6 +11,7 @@ public class BowlingGameServiceTests {
     @Test
     public void getGameScore_ReturnsValueTest() {
         BowlingGameService bowlingGameService = new BowlingGameService();
-        assertThat(bowlingGameService.getGameScore()).isEqualTo(0);
+        assertThat(bowlingGameService.getGameScore(new int[] {0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0}))
+                .isEqualTo(0);
     }
 }
